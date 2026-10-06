@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+        width="520"
+        height="284"
+        viewBox="0 0 520 284">
+
+        <style>
+            .terminal {
+                font-family: monospace;
+                fill: #666666;
+            }
+
+            .name {
+                font-size: 25px;
+                font-weight: bold;
+                fill: #444444;
+            }
+
+            .role {
+                font-size: 18px;
+            }
+
+            .stack {
+                font-size: 17px;
+            }
+
+            .explore {
+                font-size: 17px;
+            }
+
+            .line {
+                opacity: 0;
+                animation: appear 0.5s ease-out forwards;
+            }
+
+            @keyframes appear {
+                from {
+                    opacity: 0;
+                    transform: translateX(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        </style>
+        
+
+            <text
+                x="30"
+                y="52"
+                class="terminal name line"
+                style="animation-delay:0.00s">
+                Anas Khan
+            </text>
+            
+
+            <text
+                x="30"
+                y="80"
+                class="terminal role line"
+                style="animation-delay:0.12s">
+                AI/ML Enthusiast
+            </text>
+            
+
+            <text
+                x="30"
+                y="108"
+                class="terminal role line"
+                style="animation-delay:0.24s">
+                Data Science
+            </text>
+            
+
+            <text
+                x="30"
+                y="146"
+                class="terminal stack line"
+                style="animation-delay:0.36s">
+                Python · Pandas · NumPy
+            </text>
+            
+
+            <text
+                x="30"
+                y="174"
+                class="terminal stack line"
+                style="animation-delay:0.48s">
+                Scikit-learn · Flask · SQL
+            </text>
+            
+
+            <text
+                x="30"
+                y="212"
+                class="terminal explore line"
+                style="animation-delay:0.60s">
+                RAG · LLMs · AI Applications
+            </text>
+            
+</svg>
