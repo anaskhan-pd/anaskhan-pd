@@ -1,102 +1,132 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-        width="520"
-        height="284"
-        viewBox="0 0 520 284">
+width="840" height="880" viewBox="0 0 840 880"
+font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
 
-        <style>
-            .terminal {
-                font-family: monospace;
-                fill: #666666;
-            }
+<defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#111722"/>
+        <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+</defs>
 
-            .name {
-                font-size: 25px;
-                font-weight: bold;
-                fill: #444444;
-            }
+<style>
+    .reveal {
+        opacity: 0;
+        animation: reveal 0.5s ease-out forwards;
+    }
 
-            .role {
-                font-size: 18px;
-            }
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
 
-            .stack {
-                font-size: 17px;
-            }
+<rect width="840" height="880" rx="12" fill="url(#bg)"/>
+<rect x="0.5" y="0.5" width="839" height="879"
+      rx="12" fill="none" stroke="#30363d"/>
 
-            .explore {
-                font-size: 17px;
-            }
+<line x1="0" y1="30" x2="840" y2="30" stroke="#30363d"/>
 
-            .line {
-                opacity: 0;
-                animation: appear 0.5s ease-out forwards;
-            }
+<circle cx="40" cy="15" r="5" fill="#ff5f56"/>
+<circle cx="56" cy="15" r="5" fill="#ffbd2e"/>
+<circle cx="72" cy="15" r="5" fill="#27c93f"/>
 
-            @keyframes appear {
-                from {
-                    opacity: 0;
-                    transform: translateX(-10px);
-                }
+<text x="420.0" y="19"
+      fill="#7d8590"
+      font-size="12"
+      text-anchor="middle">
+    anas@github: ~$ ./profile.sh
+</text>
 
-                to {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-            }
-        </style>
-        
+<text x="40" y="105"
+      fill="#7d8590"
+      font-size="22"
+      class="reveal"
+      style="animation-delay:0.2s">
+    $ whoami
+</text>
 
-            <text
-                x="30"
-                y="52"
-                class="terminal name line"
-                style="animation-delay:0.00s">
-                Anas Khan
-            </text>
-            
+<text x="40" y="175"
+      fill="#39d353"
+      font-size="48"
+      font-weight="700"
+      class="reveal"
+      style="animation-delay:0.4s">
+    Anas Khan
+</text>
 
-            <text
-                x="30"
-                y="80"
-                class="terminal role line"
-                style="animation-delay:0.12s">
-                AI/ML Enthusiast
-            </text>
-            
+<text x="40" y="250"
+      fill="#e6edf3"
+      font-size="28"
+      class="reveal"
+      style="animation-delay:0.6s">
+    AI/ML Enthusiast
+</text>
 
-            <text
-                x="30"
-                y="108"
-                class="terminal role line"
-                style="animation-delay:0.24s">
-                Data Science
-            </text>
-            
+<text x="40" y="292"
+      fill="#7d8590"
+      font-size="24"
+      class="reveal"
+      style="animation-delay:0.75s">
+    Data Science
+</text>
 
-            <text
-                x="30"
-                y="146"
-                class="terminal stack line"
-                style="animation-delay:0.36s">
-                Python · Pandas · NumPy
-            </text>
-            
+<line x1="40" y1="360" x2="800" y2="360"
+      stroke="#30363d"/>
 
-            <text
-                x="30"
-                y="174"
-                class="terminal stack line"
-                style="animation-delay:0.48s">
-                Scikit-learn · Flask · SQL
-            </text>
-            
+<text x="40" y="425"
+      fill="#7d8590"
+      font-size="22"
+      class="reveal"
+      style="animation-delay:0.9s">
+    $ stack
+</text>
 
-            <text
-                x="30"
-                y="212"
-                class="terminal explore line"
-                style="animation-delay:0.60s">
-                RAG · LLMs · AI Applications
-            </text>
-            
+<text x="40" y="475"
+      fill="#e6edf3"
+      font-size="25"
+      class="reveal"
+      style="animation-delay:1.05s">
+    Python · Pandas · NumPy
+</text>
+
+<text x="40" y="520"
+      fill="#e6edf3"
+      font-size="25"
+      class="reveal"
+      style="animation-delay:1.2s">
+    Scikit-learn · Flask · SQL
+</text>
+
+<text x="40" y="595"
+      fill="#7d8590"
+      font-size="22"
+      class="reveal"
+      style="animation-delay:1.4s">
+    $ exploring
+</text>
+
+<text x="40" y="647"
+      fill="#e6edf3"
+      font-size="25"
+      class="reveal"
+      style="animation-delay:1.55s">
+    RAG · LLMs · AI Applications
+</text>
+
+<line x1="0" y1="820" x2="840" y2="820"
+      stroke="#30363d"/>
+
+<text x="40" y="855"
+      fill="#7d8590"
+      font-size="16">
+    anas@github:~$ <tspan fill="#e6edf3">_</tspan>
+</text>
+
 </svg>

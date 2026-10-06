@@ -1,120 +1,150 @@
 from pathlib import Path
 
-
 OUTPUT = Path("info-card.svg")
 
-lines = [
-    ("Anas Khan", "name"),
-    ("AI/ML Enthusiast", "role"),
-    ("Data Science", "role"),
-    ("", "space"),
-    ("Python · Pandas · NumPy", "stack"),
-    ("Scikit-learn · Flask · SQL", "stack"),
-    ("", "space"),
-    ("RAG · LLMs · AI Applications", "explore"),
-]
+W = 840
+H = 880
 
+BG = "#0d1117"
+FRAME = "#30363d"
+MUTED = "#7d8590"
+INK = "#e6edf3"
+GREEN = "#39d353"
 
-def escape_xml(text):
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-    )
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg"
+width="{W}" height="{H}" viewBox="0 0 {W} {H}"
+font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
 
+<defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#111722"/>
+        <stop offset="1" stop-color="{BG}"/>
+    </linearGradient>
+</defs>
 
-def main():
-    width = 520
-    line_height = 28
-    padding = 30
+<style>
+    .reveal {{
+        opacity: 0;
+        animation: reveal 0.5s ease-out forwards;
+    }}
 
-    height = padding * 2 + len(lines) * line_height
+    @keyframes reveal {{
+        from {{
+            opacity: 0;
+            transform: translateY(12px);
+        }}
+        to {{
+            opacity: 1;
+            transform: translateY(0);
+        }}
+    }}
+</style>
 
-    svg = [
-        f'''<svg xmlns="http://www.w3.org/2000/svg"
-        width="{width}"
-        height="{height}"
-        viewBox="0 0 {width} {height}">''',
+<rect width="{W}" height="{H}" rx="12" fill="url(#bg)"/>
+<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}"
+      rx="12" fill="none" stroke="{FRAME}"/>
 
-        """
-        <style>
-            .terminal {
-                font-family: monospace;
-                fill: #666666;
-            }
+<line x1="0" y1="30" x2="{W}" y2="30" stroke="{FRAME}"/>
 
-            .name {
-                font-size: 25px;
-                font-weight: bold;
-                fill: #444444;
-            }
+<circle cx="40" cy="15" r="5" fill="#ff5f56"/>
+<circle cx="56" cy="15" r="5" fill="#ffbd2e"/>
+<circle cx="72" cy="15" r="5" fill="#27c93f"/>
 
-            .role {
-                font-size: 18px;
-            }
+<text x="{W/2}" y="19"
+      fill="{MUTED}"
+      font-size="12"
+      text-anchor="middle">
+    anas@github: ~$ ./profile.sh
+</text>
 
-            .stack {
-                font-size: 17px;
-            }
+<text x="40" y="105"
+      fill="{MUTED}"
+      font-size="22"
+      class="reveal"
+      style="animation-delay:0.2s">
+    $ whoami
+</text>
 
-            .explore {
-                font-size: 17px;
-            }
+<text x="40" y="175"
+      fill="{GREEN}"
+      font-size="48"
+      font-weight="700"
+      class="reveal"
+      style="animation-delay:0.4s">
+    Anas Khan
+</text>
 
-            .line {
-                opacity: 0;
-                animation: appear 0.5s ease-out forwards;
-            }
+<text x="40" y="250"
+      fill="{INK}"
+      font-size="28"
+      class="reveal"
+      style="animation-delay:0.6s">
+    AI/ML Enthusiast
+</text>
 
-            @keyframes appear {
-                from {
-                    opacity: 0;
-                    transform: translateX(-10px);
-                }
+<text x="40" y="292"
+      fill="{MUTED}"
+      font-size="24"
+      class="reveal"
+      style="animation-delay:0.75s">
+    Data Science
+</text>
 
-                to {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-            }
-        </style>
-        """
-    ]
+<line x1="40" y1="360" x2="800" y2="360"
+      stroke="{FRAME}"/>
 
-    y = padding + 22
+<text x="40" y="425"
+      fill="{MUTED}"
+      font-size="22"
+      class="reveal"
+      style="animation-delay:0.9s">
+    $ stack
+</text>
 
-    animation_index = 0
+<text x="40" y="475"
+      fill="{INK}"
+      font-size="25"
+      class="reveal"
+      style="animation-delay:1.05s">
+    Python · Pandas · NumPy
+</text>
 
-    for text, kind in lines:
+<text x="40" y="520"
+      fill="{INK}"
+      font-size="25"
+      class="reveal"
+      style="animation-delay:1.2s">
+    Scikit-learn · Flask · SQL
+</text>
 
-        if kind == "space":
-            y += 10
-            continue
+<text x="40" y="595"
+      fill="{MUTED}"
+      font-size="22"
+      class="reveal"
+      style="animation-delay:1.4s">
+    $ exploring
+</text>
 
-        delay = animation_index * 0.12
+<text x="40" y="647"
+      fill="{INK}"
+      font-size="25"
+      class="reveal"
+      style="animation-delay:1.55s">
+    RAG · LLMs · AI Applications
+</text>
 
-        svg.append(
-            f'''
-            <text
-                x="{padding}"
-                y="{y}"
-                class="terminal {kind} line"
-                style="animation-delay:{delay:.2f}s">
-                {escape_xml(text)}
-            </text>
-            '''
-        )
+<line x1="0" y1="820" x2="{W}" y2="820"
+      stroke="{FRAME}"/>
 
-        y += line_height
-        animation_index += 1
+<text x="40" y="855"
+      fill="{MUTED}"
+      font-size="16">
+    anas@github:~$ <tspan fill="{INK}">_</tspan>
+</text>
 
-    svg.append("</svg>")
+</svg>
+"""
 
-    OUTPUT.write_text("\n".join(svg), encoding="utf-8")
+OUTPUT.write_text(svg, encoding="utf-8")
 
-    print(f"Created {OUTPUT}")
-
-
-if __name__ == "__main__":
-    main()
+print(f"Created {OUTPUT}")
