@@ -41,7 +41,7 @@ font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
       fill="#7d8590"
       font-size="12"
       text-anchor="middle">
-    anas@github: ~$ ./profile.sh
+    anaskhan-pd@github: ~$ ./profile.sh
 </text>
 
 <text x="40" y="105"
@@ -126,7 +126,7 @@ font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
 <text x="40" y="855"
       fill="#7d8590"
       font-size="16">
-    anas@github:~$ <tspan fill="#e6edf3">_</tspan>
+    anaskhan-pd@github:~$ <tspan fill="#e6edf3">_</tspan>
 </text>
 
 </svg>
